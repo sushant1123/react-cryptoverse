@@ -1,16 +1,24 @@
 import React from "react";
+
+// eslint-disable-next-line
 import millify from "millify";
+// eslint-disable-next-line
 import { Collapse, Row, Col, Typography, Avatar } from "antd";
+
+// eslint-disable-next-line
 import HTMLReactParser from "html-react-parser";
 
 import { useGetExchangesQuery } from "../../services/CryptoAPI";
 import Loader from "../../utils/Loader";
 
+// eslint-disable-next-line
 const { Text } = Typography;
+// eslint-disable-next-line
 const { Panel } = Collapse;
 
 const Exchanges = () => {
 	const { data, isFetching } = useGetExchangesQuery();
+	// eslint-disable-next-line
 	const exchangesList = data?.data?.exchanges;
 	// Note: To access this endpoint you need premium plan
 	if (isFetching) return <Loader />;
@@ -48,6 +56,7 @@ const Exchanges = () => {
             </Collapse>
           </Col>
         ))} */}
+				<Text>To access this page you need premium plan of coinranking api</Text>
 			</Row>
 		</>
 	);
